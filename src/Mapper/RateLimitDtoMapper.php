@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class RateLimitDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'subject_type' => 'subjectType', 'subject_id' => 'subjectId', 'window_size_sec' => 'windowSizeSec', 'limit_count' => 'limitCount', 'created_at' => 'createdAt' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'subject_type' => 'subjectType', 'subject_id' => 'subjectId', 'name' => 'name', 'window_size_sec' => 'windowSizeSec', 'limit_count' => 'limitCount', 'active' => 'active', 'created_at' => 'createdAt' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [ 'active' ];
