@@ -6,13 +6,13 @@ Configured rate-limiting rules at the application level.
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
 | active | BOOLEAN | NO | TRUE | Whether the rule is active. |
-| created_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
+| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| limit_count |  | NO |  | Number of allowed operations within the window. |
-| name |  | NO |  | Rule/bucket name. |
-| subject_id |  | NO |  | Identifier of the subject. |
-| subject_type | TEXT | NO |  | Entity type being limited. |
-| window_size_sec | INTEGER | NO |  | Window length in seconds. |
+| limit_count | INT | NO |  | Number of allowed operations within the window. |
+| name | VARCHAR(120) | NO |  | Rule/bucket name. |
+| subject_id | VARCHAR(128) | NO |  | Identifier of the subject. |
+| subject_type | ENUM('ip','user','api_key','tenant') | NO |  | Entity type being limited. |
+| window_size_sec | INT | NO |  | Window length in seconds. |
 
 ## Engine Details
 
@@ -47,5 +47,5 @@ Indexes:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_rate_limits | mysql | algorithm=MERGE, security=INVOKER | [packages\rate-limits\schema\040_views.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/rate-limits/schema/040_views.mysql.sql) |
-| vw_rate_limits | postgres |  | [packages\rate-limits\schema\040_views.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/rate-limits/schema/040_views.postgres.sql) |
+| vw_rate_limits | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
+| vw_rate_limits | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
