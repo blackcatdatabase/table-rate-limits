@@ -3,16 +3,16 @@
 Configured rate-limiting rules at the application level.
 
 ## Columns
-| Column | Type | Null | Default | Description |
-| --- | --- | --- | --- | --- |
-| id | BIGINT | NO |  | Surrogate primary key. |
-| subject_type | mysql: ENUM('ip','user','api_key','tenant') / postgres: TEXT | NO |  | Entity type being limited. |
-| subject_id | VARCHAR(128) | NO |  | Identifier of the subject. |
-| name | VARCHAR(120) | NO |  | Rule/bucket name. |
-| window_size_sec | mysql: INT / postgres: INTEGER | NO |  | Window length in seconds. |
-| limit_count | INT | NO |  | Number of allowed operations within the window. |
-| active | BOOLEAN | NO | TRUE | Whether the rule is active. |
-| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |
+| Column | Type | Null | Default | Description | Crypto |
+| --- | --- | --- | --- | --- | --- |
+| id | BIGINT | NO |  | Surrogate primary key. |  |
+| subject_type | mysql: ENUM('ip','user','api_key','tenant') / postgres: TEXT | NO |  | Entity type being limited. |  |
+| subject_id | mysql: VARCHAR(128) | NO |  | Identifier of the subject. |  |
+| name | mysql: VARCHAR(120) | NO |  | Rule/bucket name. |  |
+| window_size_sec | mysql: INT / postgres: INTEGER | NO |  | Window length in seconds. |  |
+| limit_count | mysql: INT | NO |  | Number of allowed operations within the window. |  |
+| active | BOOLEAN | NO | TRUE | Whether the rule is active. |  |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Creation timestamp (UTC). |  |
 
 ## Engine Details
 

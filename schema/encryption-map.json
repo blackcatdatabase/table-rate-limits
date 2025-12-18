@@ -1,0 +1,32 @@
+{
+  "tables": {
+    "rate_limits": {
+      "columns": {
+        "active": {
+          "strategy": "passthrough"
+        },
+        "created_at": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "limit_count": {
+          "strategy": "passthrough"
+        },
+        "name": {
+          "strategy": "passthrough"
+        },
+        "subject_id": {
+          "strategy": "passthrough"
+        },
+        "subject_type": {
+          "strategy": "passthrough"
+        },
+        "window_size_sec": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
